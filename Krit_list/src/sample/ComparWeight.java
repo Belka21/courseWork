@@ -2,7 +2,7 @@ package sample;
 
 import java.util.*;
 
-public class ComparWeight implements Comparator<Key>
+public class ComparWeight implements Comparator<Note>
 {
     private List<Note> register;
 
@@ -11,7 +11,7 @@ public class ComparWeight implements Comparator<Key>
         this.register = register;
     }
 
-    public int compare (Key k1, Key k2)
+    public int compare (Note k1, Note k2)
     {
         if (k1.getWeight()<k2.getWeight()) return -1;
         if (k1.getWeight()>k2.getWeight()) return 1;

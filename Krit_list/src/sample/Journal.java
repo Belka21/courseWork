@@ -89,7 +89,7 @@ public class Journal {
     //update
     public boolean updateNote(int index, Note note)
     {
-        int x = register.indexOf(note.getK());//получаем индекс по ключу переданной записи
+        int x = register.indexOf(note);//получаем индекс по ключу переданной записи
 
         //если индекс ключа и переданный индекс не совпадают - значит
         // хотят изменить на запись с совпадающим ключём
@@ -117,14 +117,14 @@ public class Journal {
 
         for (Note iter: register)
         {
-            if (weight<0) weightSearch =  iter.getK().getWeight();
-            if (deliveTime<0) deliveSearch =  iter.getK().getDeliveTime();
-            if (cipher == "") ciphSearch =  iter.getK().getValuable();
+            if (weight<0) weightSearch =  iter.getWeight();
+            if (deliveTime<0) deliveSearch =  iter.getDeliveTime();
+            if (cipher == "") ciphSearch =  iter.getValuable();
             if (cost<0) costSearch = iter.getCost();
 
-            if ((iter.getK().getWeight()==weightSearch)
-                    &&(iter.getK().getValuable()==ciphSearch)
-                    &&(iter.getK().getDeliveTime()==deliveSearch)
+            if ((iter.getWeight()==weightSearch)
+                    &&(iter.getValuable()==ciphSearch)
+                    &&(iter.getDeliveTime()==deliveSearch)
                     &&(iter.getCost()==costSearch))
                 subJour.register.add(iter);
         }
