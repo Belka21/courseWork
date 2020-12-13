@@ -93,8 +93,11 @@ public class Journal {
 
         //если индекс ключа и переданный индекс не совпадают - значит
         // хотят изменить на запись с совпадающим ключём
-        if ((x>0) && (x!=index)) return false;
-
+        if ((x>=0) && (x!=index))
+        {
+            register.set(index, register.get(index));
+            return false;
+        }
         register.set(index, note);
         return true;
     }
@@ -131,11 +134,22 @@ public class Journal {
         return subJour;
     }
 
-    //выводит список  в окно
-    public void putJournal()
+
+    public int countDelive()
     {
-        //some day/ some time...
+        if (register.size()==0) return 0;
+        ArrayList <Integer> cost = new ArrayList<Integer>();
+        for (Note iter:register)
+        {
+            if (cost.indexOf(iter.getDeliveTime())<0)
+            {
+                cost.add(iter.getDeliveTime());
+            }
+        }
+        return cost.size();
     }
+
+
 
     //сортировка
     public Journal sort(Comparator comp)

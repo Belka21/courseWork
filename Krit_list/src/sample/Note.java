@@ -24,6 +24,14 @@ public class Note implements Comparable <Note>{
         this.cost = cost;
     }
 
+    public Note(Note nt)
+    {
+        weight = nt.weight;
+        valuable = nt.valuable;
+        deliveTime = nt.deliveTime;
+        cost = nt.cost;
+    }
+
     //set
     public void setWeight(int weight) {
         this.weight = weight;
@@ -81,6 +89,7 @@ public class Note implements Comparable <Note>{
                 deliveTime == nt.deliveTime &&
                 valuable == nt.valuable;
     }
+
 
     @Override
     public int hashCode() {

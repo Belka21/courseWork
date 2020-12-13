@@ -9,6 +9,7 @@ import java.io.FileWriter;
 
 public class DBIO {
 
+    //вывод из файла
     public static void cout(Journal j, String fileName) throws Exception
     {
         FileReader fr = new FileReader(fileName);
@@ -37,6 +38,7 @@ public class DBIO {
         fr.close();
     }
 
+    //запись в файл
     public static void cin(Journal j, String fileName) throws  Exception
     {
         FileWriter fw = new FileWriter(fileName);
